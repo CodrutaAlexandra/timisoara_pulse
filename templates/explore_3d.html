@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Timișoara Pulse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+     <style>
+        body {
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: #fff;
+        }
+        /* Stilurile pentru bara de navigație */
+.navbar {
+    background-color: #333; /* Culoarea de fundal pentru navbar */
+    min-height: 20px; /* Înălțimea minimă a navbar-ului */
+    max-height: 60px;
+    font-size: 0.9em;
+}
+
+/* Stilurile pentru link-urile din navbar */
+.navbar-brand, .nav-link {
+    color: #fff !important; /* Culoarea textului */
+    font-size: 1.0em; /* Mărimea textului */
+    text-shadow: none; /* Fără umbră text */
+}
+
+/* Stilurile pentru iconițele din navbar, utilizând Font Awesome */
+.navbar .fas {
+    font-size: 0.9em; /* Mărimea iconițelor */
+}
+        .section {
+            padding: 40px 0;
+        }
+        .image-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .image-gallery img:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .img-src {
+             width: 50px;  /* Setează lățimea la 500px */
+                height: 50px; /* Setează înălțimea la 300px */
+        }
+        body {
+    color: #FFFFFF; /* Schimbă culoarea textului în alb */
+    font-family: 'Arial', sans-serif; /* Alege un font ușor de citit */
+    line-height: 1.6; /* Spațiu suplimentar între liniile de text */
+}
+
+/* Stilizează titlurile secțiunilor */
+h2 {
+    font-size: 2em; /* Mărește dimensiunea fontului */
+    margin-bottom: .5em; /* Spațiu sub titlu */
+    text-shadow: 2px 2px 4px #000000; /* Adaugă umbra textului pentru a îmbunătăți lizibilitatea pe fundaluri colorate */
+}
+
+/* Stilizează subtitlurile secțiunilor */
+h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+/* Stilizează listele */
+ul {
+    padding-left: 20px; /* Adaugă padding pentru alinierea listei */
+}
+
+li {
+    margin-bottom: 10px; /* Spațiu între elementele listei */
+}
+
+/* Stilizează link-urile pentru a se distinge */
+a {
+    color: #ADD8E6; /* O nuanță de albastru deschis pentru link-uri */
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+}
+
+a:hover {
+    text-decoration: underline; /* Subliniază link-ul la hover pentru a indica posibilitatea clicului */
+}
+
+/* Stilizează butoanele navbar-ului dacă este necesar */
+.navbar-brand, .nav-link {
+    font-size: 1.1em;
+    text-shadow: none; /* Înlătură umbra textului pentru claritate */
+}
+
+/* Îmbunătățirea vizibilității textului pe imagini sau fundaluri colorate */
+.text-justify {
+    background-color: rgba(0, 0, 0, 0.5); /* Adaugă un fundal semi-transparent */
+    padding: 15px; /* Spațiu în jurul textului */
+    border-radius: 10px; /* Rotunjirea colțurilor fundalului */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adaugă o umbră ușoară pentru a "ridica" textul de pe fundal */
+}
+
+        /* Add more custom styles as needed */
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Explorare Timișoara</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/events">Events <i class="fas fa-calendar-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/map">Map <i class="fas fa-map-marked-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/businesses">Local Businesses <i class="fas fa-store"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/explore_3d">Explore 3D <i class="fas fa-vr-cardboard"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+   <!-- Secțiunea de Explorare 3D -->
+   <!-- Section for 3D Exploration Introduction -->
+<div class="container mt-4">
+    <h2 class="mb-3">Explorează Timișoara în 3D</h2>
+    <p class="text-justify">
+        Pregătește-te să experimentezi Timișoara ca niciodată până acum, prin intermediul unor reprezentări tridimensionale interactive ce vor fi disponibile în curând. Momentan, te invităm să te bucuri de o colecție de imagini care îți oferă un tur vizual al unora dintre cele mai frumoase locuri din oraș.
+    </p>
+    <p class="text-justify">
+        În viitorul apropiat, aceste imagini vor prinde viață în forme 3D pe care le vei putea explora și cu care vei putea interacționa, oferindu-ți o perspectivă unică și o experiență captivantă a patrimoniului cultural și architectural al Timișoarei.
+    </p>
+
+    <h3 class="mt-4">Ce Poți Aștepta?</h3>
+    <ul>
+        <li><strong>Reprezentări 3D Interactive:</strong> În curând, vei putea naviga prin reprezentări tridimensionale ale celor mai emblematice locuri din Timișoara.</li>
+        <li><strong>Explorare Virtuală:</strong> Vei putea "merge" virtual prin străzile istorice și piețele vibrante ale orașului.</li>
+        <li><strong>Povești și Istorie:</strong> Fiecare locație 3D va veni cu informații detaliate despre istoria și importanța sa în cadrul orașului.</li>
+    </ul>
+</div>
+
+
+        <!-- Text and Image Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-section">
+                    <h3>Istoria Timișoarei</h3>
+                    <p>Timișoara, orașul florilor, al primelor și al revoluției, te invită să-i descoperi poveștile prin intermediul tehnologiei 3D.</p>
+                    <!-- Lista de repere istorice -->
+                    <ul>
+                        <li>Primul oraș european cu iluminat public electric (1884)</li>
+                            <li>Capitala culturală europeană pentru anul 2023</li>
+                            <!-- ... alte repere ... -->
+                    </ul>
+                    <!-- Citat istoric -->
+                    <blockquote>
+                        <p>"Timișoara este locul unde timpul și istoria se întâlnesc pe străzi încărcate de povești."</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-section">
+                    <img src="/static/photos/ist timi.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Sectiunea Arhitectura -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 order-lg-1">
+            <div class="text-section">
+                <h3>Arhitectura Timișoarei</h3>
+                <p>De la stiluri baroce la modernism, Timișoara etalează o diversitate arhitecturală care spune povestea evoluției sale urbane.</p>
+                <blockquote>"Arhitectura este muzica înghețată în timp." - Johann Wolfgang von Goethe</blockquote>
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-2">
+            <div class="image-section">
+                <img src="/static/photos/arhi_timi.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sectiunea Cultura -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="text-section">
+                <h3>Cultura Timișoarei</h3>
+                <p>Cu o scenă artistică vibrantă și evenimente culturale tot anul, Timișoara este un centru de creație și expresie culturală.</p>
+                <blockquote>"Evenimentele de astăzi sunt amintirile de mâine." - Proverb</blockquote>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="image-section">
+                <img src="/static/photos/cult tim.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sectiunea Parcuri și Natură -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 order-lg-2">
+            <div class="image-section">
+                <img src="/static/photos/parc timi1.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <div class="text-section">
+                <h3>Parcuri și Natură</h3>
+                <p>Oaze de liniște și spații verzi, parcurile din Timișoara oferă locuitorilor și vizitatorilor un refugiu pitoresc în inima orașului.</p>
+                <blockquote>"În natură, lumină creează culoarea. În pictură, culoarea creează lumină." - Hans Hofmann</blockquote>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sectiunea Evenimente -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="text-section">
+                <h3>Evenimente în Timișoara</h3>
+                <p>Festivaluri, concerte, expoziții – Timișoara pulsează în ritmul evenimentelor care aduc laolaltă comunități și culturi diverse.</p>
+                <blockquote>"Călătoria este singura cheltuială care te îmbogățește." - Proverb</blockquote>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="image-section">
+                <img src="/static/photos/ev_timi.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Sectiunea Gastronomie -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="text-section">
+                <h3>Gastronomia Timișoarei</h3>
+                <p>Bucurați-vă de o călătorie culinară prin Timișoara și descoperiți gusturile autentice ale Banatului în restaurantele și cafenelele locale.</p>
+                <blockquote>"Bucătăria unei țări este o fereastră spre cultura sa." - Anonim</blockquote>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="image-section">
+                <img src="/static/photos/gast timi.jpeg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sectiunea Arte și Meșteșuguri -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 order-lg-2">
+            <div class="image-section">
+                <img src="/static/photos/arta si mest timi.jpeg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <div class="text-section">
+                <h3>Arte și Meșteșuguri</h3>
+                <p>Descoperă tradițiile și creativitatea localnicilor prin piesele unice de artizanat și prin galeriile de artă care îmbogățesc cultura orașului.</p>
+                <blockquote>"Artizanatul este arta de a crea frumos din suflet și din mâini." - Anonim</blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sectiunea Spații Verzi și Relaxare -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="text-section">
+                <h3>Spații Verzi și Relaxare</h3>
+                <p>Fie că este vorba de o plimbare prin parcurile bine întreținute sau de un picnic lângă Bega, Timișoara oferă locuri perfecte pentru relaxare și reconectare cu natura.</p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="image-section">
+                <img src="/static/photos/spatii verzi si relax pe bvega.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sectiunea Vizitează Timișoara -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 order-lg-2">
+            <div class="image-section">
+               <img src="/static/photos/viziteaza timi.jpg" alt="Arhitectura Timișoarei" height="500" width="490">
+            </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <div class="text-section">
+                <h3>Vizitează Timișoara</h3>
+                <p>Planifică-ți vizita și asigură-te că nu ratezi niciuna dintre atracțiile pe care Timișoara le are de oferit, de la tururi ghidate, la evenimente culturale și aventuri urbane.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
+
+        var canvasContainer = document.getElementById('canvas-container');
+        renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
+        canvasContainer.appendChild(renderer.domElement);
+
+        // Lighting
+        var ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+        scene.add(directionalLight);
+
+        // Load a 3D model
+        var loader = new THREE.GLTFLoader();
+        loader.load('photos/p1.gltf', function(gltf) {
+            scene.add(gltf.scene);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+
+        camera.position.z = 5;
+
+        var animate = function () {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    </script>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+#canvas-container {
+    width: 100%;
+    height: 500px; /* Sau orice înălțime dorești */
+    background: url('path_to_placeholder_image.jpg') center center no-repeat; /* Imagine placeholder */
+    background-size: cover; /* Asigură-te că imaginea acoperă întregul container */
+}
+</style>
+
+</body>
+</html>

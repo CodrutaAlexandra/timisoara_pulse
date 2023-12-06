@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Timișoara Pulse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+     <style>
+        body {
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        }
+/* Stilurile pentru bara de navigație */
+.navbar {
+    background-color: #333; /* Culoarea de fundal pentru navbar */
+    min-height: 20px; /* Înălțimea minimă a navbar-ului */
+    max-height: 60px;
+    font-size: 0.9em;
+}
+
+/* Stilurile pentru link-urile din navbar */
+.navbar-brand, .nav-link {
+    color: #fff !important; /* Culoarea textului */
+    font-size: 0.6em; /* Mărimea textului */
+    text-shadow: none; /* Fără umbră text */
+}
+
+/* Stilurile pentru iconițele din navbar, utilizând Font Awesome */
+.navbar .fas {
+    font-size: 0.8em; /* Mărimea iconițelor */
+}
+
+        /* Stilul general al textului pentru a-l face mai primitor */
+body {
+    color: #FFFFFF; /* Schimbă culoarea textului în alb */
+    font-family: 'Arial', sans-serif; /* Alege un font ușor de citit */
+    line-height: 1.6; /* Spațiu suplimentar între liniile de text */
+}
+
+/* Stilizează titlurile secțiunilor */
+h2 {
+    font-size: 2em; /* Mărește dimensiunea fontului */
+    margin-bottom: .5em; /* Spațiu sub titlu */
+    text-shadow: 2px 2px 4px #000000; /* Adaugă umbra textului pentru a îmbunătăți lizibilitatea pe fundaluri colorate */
+}
+
+/* Stilizează subtitlurile secțiunilor */
+h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+/* Stilizează listele */
+ul {
+    padding-left: 20px; /* Adaugă padding pentru alinierea listei */
+}
+
+li {
+    margin-bottom: 10px; /* Spațiu între elementele listei */
+}
+
+/* Stilizează link-urile pentru a se distinge */
+a {
+    color: #ADD8E6; /* O nuanță de albastru deschis pentru link-uri */
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+}
+
+a:hover {
+    text-decoration: underline; /* Subliniază link-ul la hover pentru a indica posibilitatea clicului */
+}
+
+/* Stilizează butoanele navbar-ului dacă este necesar */
+.navbar-brand, .nav-link {
+    font-size: 1.1em;
+    text-shadow: none; /* Înlătură umbra textului pentru claritate */
+}
+
+/* Îmbunătățirea vizibilității textului pe imagini sau fundaluri colorate */
+.text-justify {
+    background-color: rgba(0, 0, 0, 0.5); /* Adaugă un fundal semi-transparent */
+    padding: 15px; /* Spațiu în jurul textului */
+    border-radius: 10px; /* Rotunjirea colțurilor fundalului */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adaugă o umbră ușoară pentru a "ridica" textul de pe fundal */
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Explorare Timișoara</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/events">Events <i class="fas fa-calendar-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/map">Map <i class="fas fa-map-marked-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/businesses">Local Businesses <i class="fas fa-store"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/explore_3d">Explore 3D <i class="fas fa-vr-cardboard"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Section for Map Description and Events -->
+<!-- Section for Map Introduction -->
+<div class="container mt-4">
+    <h2 class="mb-3">Bine ai venit pe Harta Interactivă a Timișoarei</h2>
+    <p class="text-justify">
+        Explorează frumusețile și secretele Timișoarei prin intermediul hărții noastre interactive. Deși încă este în stadiu de dezvoltare, în curând harta va deveni un instrument esențial pentru descoperirea evenimentelor și a punctelor de interes din oraș. Imaginează-ți o hartă plină de viață, unde evenimentele culturale, festivalurile, expozițiile și alte activități locale sunt doar la un click distanță.
+    </p>
+    <p class="text-justify">
+        În viitor, fiecare marcator de pe hartă va oferi detalii despre evenimentele care se desfășoară, inclusiv informații despre locații, orare și descrieri. Acest lucru îți va facilita planificarea vizitelor în oraș și îți va oferi o nouă perspectivă asupra dinamismului urban al Timișoarei.
+    </p>
+
+    <!-- Additional features or upcoming updates -->
+    <h3 class="mt-4">Ce Urmează?</h3>
+    <ul>
+        <li><strong>Actualizări în Timp Real:</strong> În viitor, harta va reflecta evenimentele și schimbările din oraș în timp real.</li>
+        <li><strong>Interactivitate Avansată:</strong> Abilitatea de a interacționa cu marcatorii pentru a afla mai multe despre fiecare eveniment sau locație.</li>
+        <li><strong>Explorare Detaliată:</strong> Navigare intuitivă și zoom pentru a descoperi toate colțurile orașului.</li>
+    </ul>
+</div>
+
+
+
+    <!-- Map section -->
+    <div class="container mt-4">
+        <h2 class="mb-3">Explore the Map of Timișoara</h2>
+        <!-- Placeholder for the map (Use a service like Google Maps) -->
+        <div id="map" style="height: 400px;"></div>
+        <!-- Add a script here to initialize the map, e.g., Google Maps API script -->
+    </div>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var timisoara = [45.7489, 21.2087];
+        var map = L.map('map').setView(timisoara, 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Adaugă marker pentru Timișoara
+        var marker = L.marker(timisoara).addTo(map);
+        marker.bindPopup("<b>Timișoara</b><br>Orașul florilor.").openPopup();
+    });
+</script>
+
+</body>
+</html>

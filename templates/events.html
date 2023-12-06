@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Evenimente în Timișoara</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    font-family: 'Arial', sans-serif; /* Alege un font ușor de citit */
+    line-height: 1.6; /* Spațiu suplimentar între liniile de text */
+}
+
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff; /* Culoarea inițială a fundalului cardului */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa; /* Schimbă culoarea de fundal la hover */
+    color: #007bff; /* Schimbă culoarea textului la hover */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+    opacity: 0.7; /* Opțional: Schimbă opacitatea imaginii */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.card-text,
+.text-muted {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Stilurile pentru bara de navigație */
+.navbar {
+    background-color: #333; /* Culoarea de fundal pentru navbar */
+    min-height: 20px; /* Înălțimea minimă a navbar-ului */
+    max-height: 60px;
+    font-size: 0.9em;
+}
+
+/* Stilurile pentru link-urile din navbar */
+.navbar-brand, .nav-link {
+    color: #fff !important; /* Culoarea textului */
+    font-size: 1.0em; /* Mărimea textului */
+    text-shadow: none; /* Fără umbră text */
+}
+
+/* Stilurile pentru iconițele din navbar, utilizând Font Awesome */
+.navbar .fas {
+    font-size: 1.0em; /* Mărimea iconițelor */
+}
+
+
+
+/* Stiluri pentru secțiunea de introducere, identic cu pagina hărții */
+.intro-section {
+    background: rgba(255, 255, 255, 0.85); /* Fundal alb semi-transparent */
+    padding: 20px; /* Spatiu interior */
+    border-radius: 8px; /* Colțuri rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbra ușoară pentru efect de profunzime */
+    margin-bottom: 30px; /* Spațiu sub secțiune */
+    color: #000; /* Text de culoare neagră pentru lizibilitate îmbunătățită */
+    max-width: 1200px; /* sau orice altă lățime preferi */
+    margin-left: auto; /* Centrează secțiunea pe orizontală */
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.intro-section h2 {
+    font-size: 2em; /* Mărește dimensiunea fontului */
+    margin-bottom: 0.5em; /* Spațiu sub titlu */
+    text-shadow: 2px 2px 4px #000000; /* Adaugă umbra textului */
+}
+
+.intro-section h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+.intro-section ul {
+    padding-left: 20px; /* Adaugă padding pentru alinierea listei */
+}
+
+.intro-section li {
+    margin-bottom: 10px; /* Spațiu între elementele listei */
+}
+
+.intro-section a {
+    color: #ADD8E6; /* O nuanță de albastru deschis pentru link-uri */
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+}
+
+.intro-section a:hover {
+    text-decoration: underline; /* Subliniază link-ul la hover pentru a indica posibilitatea clicului */
+}
+
+/* Adaugă acest stil în fișierul tău 'styles.css' sau în secțiunea <style> a documentului HTML
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Explorare Timișoara</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/events">Events <i class="fas fa-calendar-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/map"> Map <i class="fas fa-map-marked-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/businesses">Local Businesses <i class="fas fa-store"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/explore_3d">Explore 3D <i class="fas fa-vr-cardboard"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="intro-section">
+    <h2>Evenimente de Top în Timișoara</h2>
+    <p>
+        Timișoara vibrează de energie și ospitalitate prin evenimentele sale diverse și captivante. Fie că ești în căutarea unei experiențe culturale, muzicale sau artistice, pagina noastră de evenimente este locul perfect pentru a descoperi ce este nou și interesant în oraș. De la festivaluri de film la expoziții de artă și concerte live, fiecare eveniment este o oportunitate de a te conecta cu spiritul dinamic al Timișoarei.
+    </p>
+    <h3>Descoperă și Participă</h3>
+    <ul>
+        <li>Diversitate: Evenimente pentru toate gusturile și interesele, de la teatru la evenimente sportive.</li>
+        <li>Informații Actualizate: Detalii la zi despre date, locații și bilete disponibile.</li>
+        <li>Participare Comunitară: Oportunități de a te implica în evenimente comunitare și de a întâlni noi persoane.</li>
+        <li>Adaugă Evenimentul Tău: Ai un eveniment în Timișoara? Publică-l aici pentru a ajunge la mai mulți oameni.</li>
+    </ul>
+</div>
+
+
+
+<div class="container mt-5 text-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEventModal">
+        Adaugare Eveniment
+    </button>
+</div>
+
+<div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="addEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addEventModalLabel">Adaugă un Eveniment Nou</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addEventForm">
+                    <div class="form-group">
+                        <label for="eventName">Numele Evenimentului</label>
+                        <input type="text" class="form-control" id="eventName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Data Evenimentului</label>
+                        <input type="date" class="form-control" id="eventDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDescription">Descrierea Evenimentului</label>
+                        <textarea class="form-control" id="eventDescription" name="description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventLocation">Locația Evenimentului</label>
+                        <input type="text" class="form-control" id="eventLocation" name="location" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="secretCode">Cod Secret</label>
+                      <input type="password" class="form-control" id="secretCode" name="secretCode" required>
+                    </div>
+                    <div class="container mt-3">
+                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbG7OQVR3wsoKDVIvvzzzpb3IhjY-JUNX--HpHPO6UF__Kxw/viewform?usp=sf_link" target="_blank" class="btn btn-info" >Solicită Cod Secret</a>
+                    </div>
+
+                    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+                    <div id="map" style="height: 400px;">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Închide</button>
+                <button type="button" class="btn btn-primary" id="submitEvent">Adaugă Eveniment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <h1 class="text-center text-white mb-4">Evenimente de Top în Timișoara</h1>
+    <div class="row" id="eventsList">
+        {% for event in events %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="path_to_image_or_placeholder" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.name }}</h5>
+                        <p class="card-text">{{ event.description }}</p>
+                        <p class="card-text"><small class="text-muted">{{ event.date.strftime('%d-%m-%Y') }}</small></p>
+                        <p class="card-text">{{ event.location }}</p>
+                        <div class="form-group">
+                        <label for="eventImage">Imagine Eveniment</label>
+                        <input type="file" class="form-control-file" id="eventImage" name="image">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+$(document).ready(function() {
+    var mymap = null;
+    var marker = null;
+
+    // Inițializează harta când modalul este deschis
+    $('#addEventModal').on('shown.bs.modal', function () {
+        if (!mymap) {
+            mymap = L.map('map', {scrollWheelZoom: false}).setView([45.7489, 21.2087], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(mymap);
+        } else {
+            mymap.invalidateSize(); // Asigură-te că harta se încarcă corect
+        }
+
+        // Setează listener pentru clicul pe hartă
+        mymap.on('click', function onMapClick(e) {
+            if (marker) {
+                mymap.removeLayer(marker); // Înlătură marker-ul anterior dacă există
+            }
+            marker = L.marker(e.latlng).addTo(mymap);
+
+            // Facem o cerere de geocodare inversă la OpenStreetMap Nominatim
+            var geocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`;
+
+            fetch(geocodeUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.display_name) {
+                        // Actualizează câmpul de text cu adresa returnată
+                        document.getElementById('eventLocation').value = data.display_name;
+                    } else {
+                        console.log("Adresa nu a putut fi găsită.");
+                        document.getElementById('eventLocation').value = "Adresa nu a putut fi găsită.";
+                    }
+                })
+                .catch(err => {console.error(err);
+                document.getElementById('eventLocation').value = "Eroare la găsirea adresei.";});
+            });
+        });
+    });
+</script>
+
+
+</script>
+
+<script>
+document.getElementById('submitEvent').addEventListener('click', function() {
+    var formData = new FormData(document.getElementById('addEventForm'));
+
+    fetch('/events', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Logică suplimentară după succes
+        location.reload(); // Reîncarcă pagina pentru a vedea noul eveniment
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+    $('#addEventModal').modal('hide');
+    document.getElementById('addEventForm').reset();
+});
+</script>
+
+</body>
+</html>

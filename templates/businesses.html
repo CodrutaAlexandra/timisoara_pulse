@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Timișoara Pulse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+     <style>
+        body {
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: #fff;
+        }
+        /* Stilurile pentru bara de navigație */
+
+        .business-card {
+            background: #fff;
+            color: #333;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .business-card img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .rating {
+            color: #ffc107;
+        }
+        .card-footer {
+            background: inherit;
+            border-top: none;
+        }
+        #businessMap {
+            height: 250px; /* sau orice altă valoare dorită */
+            width: 100%; /* pentru a se întinde pe toată lățimea containerului */
+        }
+        body {
+    color: #FFFFFF; /* Schimbă culoarea textului în alb */
+    font-family: 'Arial', sans-serif; /* Alege un font ușor de citit */
+    line-height: 1.6; /* Spațiu suplimentar între liniile de text */
+}
+
+/* Stilurile pentru bara de navigație */
+.navbar {
+    background-color: #333; /* Culoarea de fundal pentru navbar */
+    min-height: 20px; /* Înălțimea minimă a navbar-ului */
+    max-height: 60px;
+    font-size: 0.9em;
+}
+
+/* Stilurile pentru link-urile din navbar */
+.navbar-brand, .nav-link {
+    color: #fff !important; /* Culoarea textului */
+    font-size: 1.0em; /* Mărimea textului */
+    text-shadow: none; /* Fără umbră text */
+}
+
+/* Stilurile pentru iconițele din navbar, utilizând Font Awesome */
+.navbar .fas {
+    font-size: 1.0em; /* Mărimea iconițelor */
+}
+
+/* Stilizează titlurile secțiunilor */
+h2 {
+    font-size: 2em; /* Mărește dimensiunea fontului */
+    margin-bottom: .5em; /* Spațiu sub titlu */
+    text-shadow: 2px 2px 4px #000000; /* Adaugă umbra textului pentru a îmbunătăți lizibilitatea pe fundaluri colorate */
+}
+
+/* Stilizează subtitlurile secțiunilor */
+h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+/* Stilizează listele */
+ul {
+    padding-left: 20px; /* Adaugă padding pentru alinierea listei */
+}
+
+li {
+    margin-bottom: 10px; /* Spațiu între elementele listei */
+}
+
+/* Stilizează link-urile pentru a se distinge */
+a {
+    color: #ADD8E6; /* O nuanță de albastru deschis pentru link-uri */
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+}
+
+a:hover {
+    text-decoration: underline; /* Subliniază link-ul la hover pentru a indica posibilitatea clicului */
+}
+
+/* Stilizează butoanele navbar-ului dacă este necesar */
+.navbar-brand, .nav-link {
+    font-size: 1.1em;
+    text-shadow: none; /* Înlătură umbra textului pentru claritate */
+}
+
+/* Îmbunătățirea vizibilității textului pe imagini sau fundaluri colorate */
+.text-justify {
+    background-color: rgba(0, 0, 0, 0.5); /* Adaugă un fundal semi-transparent */
+    padding: 15px; /* Spațiu în jurul textului */
+    border-radius: 10px; /* Rotunjirea colțurilor fundalului */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adaugă o umbră ușoară pentru a "ridica" textul de pe fundal */
+}
+
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Explorare Timișoara</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/events">Events <i class="fas fa-calendar-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/map"> Map <i class="fas fa-map-marked-alt"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/businesses">Local Businesses <i class="fas fa-store"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/explore_3d">Explore 3D <i class="fas fa-vr-cardboard"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Section for Local Businesses Introduction -->
+<div class="container mt-4">
+    <h2 class="mb-3">Descoperă Afacerile Locale din Timișoara</h2>
+    <p class="text-justify">
+        Timișoara este un oraș vibrant, plin de inițiativă și creativitate. Pagina noastră dedicată afacerilor locale îți oferă posibilitatea de a explora o varietate de întreprinderi care aduc culoare și diversitate comunității. De la ateliere artizanale la restaurante și cafenele cu tradiție, fiecare afacere locală contribuie la unicitatea orașului nostru.
+    </p>
+    <p class="text-justify">
+        Încurajăm locuitorii și vizitatorii să sprijine economia locală descoperind și frecventând aceste bijuterii ale Timișoarei. Fiecare profil de afacere oferă detalii esențiale precum descrierea activității, recenziile clienților, orele de funcționare și locația. Aici vei găsi tot ce ai nevoie pentru a te conecta cu inima antreprenorială a orașului.
+    </p>
+
+    <h3 class="mt-4">Ce Vei Găsi Aici?</h3>
+    <ul>
+        <li><strong>Variație Mare:</strong> De la magazine de suveniruri la spații de coworking, descoperă diversitatea afacerilor locale.</li>
+        <li><strong>Detalii de Contact:</strong> Informații actualizate pentru a lua legătura direct cu afacerile tale favorite.</li>
+        <li><strong>Recenzii:</strong> Află ce cred alții despre serviciile oferite de afacerile din Timișoara.</li>
+        <li><strong>Adaugă Afacerea Ta:</strong> Dacă deții o afacere în Timișoara, nu ezita să te înscrii pe platforma noastră pentru a crește vizibilitatea.</li>
+    </ul>
+</div>
+
+
+<!-- Buton pentru deschiderea modalului de adăugare afacere -->
+<div class="container mt-5 text-center">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addBusinessModal">
+        Adaugă Afacerea Ta
+    </button>
+</div>
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Descoperă Afacerile Locale din Timișoara</h1>
+    <div class="row">
+        <!-- Aici poți adăuga carduri pentru afacerile locale -->
+        <!-- Exemplu de card pentru o afacere locală -->
+        <div class="col-md-4">
+            <div class="card business-card">
+                <img src="path_to_business_image.jpg" class="card-img-top" alt="Numele Afacerii">
+                <div class="card-body">
+                    <h5 class="card-title">Numele Afacerii</h5>
+                    <p class="card-text">Descrierea scurtă a afacerii.</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        (4.5)
+                    </div>
+                    <p class="card-text"><small class="text-muted">Program: 9:00 - 21:00</small></p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Vezi Detalii</a>
+                </div>
+            </div>
+        </div>
+        <!-- Poți repeta acest card pentru alte afaceri -->
+    </div>
+</div>
+
+<!-- Modal pentru adăugarea unei afaceri -->
+<div class="modal fade" id="addBusinessModal" tabindex="-1" role="dialog" aria-labelledby="addBusinessModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBusinessModalLabel">Adaugă o Afacere Nouă</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addBusinessForm" action="/businesses" method="POST" enctype="multipart/form-data">
+                    <!-- Numele Afacerii -->
+                    <div class="form-group">
+                        <label for="businessName">Numele Afacerii</label>
+                        <input type="text" class="form-control" id="businessName" name="name" placeholder="Introduceți numele afacerii" required>
+                    </div>
+                    <!-- Descrierea Afacerii -->
+                    <div class="form-group">
+                        <label for="businessDescription">Descrierea Afacerii</label>
+                        <textarea class="form-control" id="businessDescription" name="description" rows="3" placeholder="Introduceți o descriere" required></textarea>
+                    </div>
+                    <!-- Adresa Afacerii -->
+                    <div class="form-group">
+                        <label for="businessAddress">Adresa Afacerii</label>
+                        <input type="text" class="form-control" id="businessAddress" name="address" placeholder="Selectați de pe hartă" required readonly>
+                    </div>
+                    <div id="businessMap" style="height: 400px;"></div> <!-- Container pentru harta Leaflet -->
+                    <!-- Programul de Lucru -->
+                    <div class="form-group">
+                        <label for="businessHours">Programul de Lucru</label>
+                        <input type="text" class="form-control" id="businessHours" name="hours" placeholder="Ex: L-V: 9-17, S: 10-14" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CUI">CUI</label>
+                        <input type="text" class="form-control" id="CUI" name="CUI" placeholder="Introduceți Codul Unic de Înregistrare" required>
+                    </div>
+                    <!-- Meniul (opțional)
+                    <div class="form-group">
+                        <label for="businessMenu">Meniul (opțional)</label>
+                        <input type="file" class="form-control-file" id="businessMenu" name="menu">
+                    </div>-->
+                    <!-- Buton pentru trimiterea formularului -->
+                    <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Închide</button>
+                <button type="submit" class="btn btn-primary">Adaugă Afacere</button>
+            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Descoperă Afacerile Locale din Timișoara</h1>
+    <div class="row">
+        {% for business in businesses %}
+            <div class="col-md-4">
+                <div class="card business-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ business.name }}</h5>
+                        <p class="card-text">{{ business.description }}</p>
+                        <p class="card-text"><small class="text-muted">Program: {{ business.hours }}</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Vezi Detalii</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p>Nu sunt afaceri de afișat.</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+ <!-- Includeți jQuery și Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Includeți Leaflet JS și plugin-uri suplimentare -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.js"></script>
+
+<!-- Script pentru trimiterea datelor formularului -->
+<script>
+    document.getElementById('submitBusiness').addEventListener('click', function() {
+    var formData = new FormData(document.getElementById('addBusinessForm'));
+
+    // Presupunând că aveți un endpoint /add_business care acceptă datele formularului
+    fetch('/add_business', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Logică pentru actualizarea paginii cu noua afacere adăugată
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+    $('#addBusinessModal').modal('hide');
+    document.getElementById('addBusinessForm').reset();
+});
+
+</script>
+
+    <script>
+    var businessMap;
+    var addressMarker;
+
+    function initMap() {
+        businessMap = L.map('businessMap').setView([45.7489, 21.2087], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(businessMap);
+
+        businessMap.on('click', function(e) {
+            if (addressMarker) {
+                businessMap.removeLayer(addressMarker);
+            }
+            addressMarker = L.marker(e.latlng).addTo(businessMap);
+
+            var geocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`;
+
+            fetch(geocodeUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.display_name) {
+                        document.getElementById('businessAddress').value = data.display_name;
+                    } else {
+                        console.log("Adresa nu a putut fi găsită.");
+                        document.getElementById('businessAddress').value = "Adresa nu a putut fi găsită.";
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById('businessAddress').value = "Eroare la găsirea adresei.";
+                });
+        });
+    }
+
+    $('#addBusinessModal').on('shown.bs.modal', function() {
+        if (!businessMap) {
+            initMap();
+        } else {
+            businessMap.invalidateSize();
+        }
+    });
+    </script>
+
+</body>
+</html>

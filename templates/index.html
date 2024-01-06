@@ -10,7 +10,28 @@
         body {
             background: linear-gradient(135deg, #71b7e6, #9b59b6);
             color: #fff;
+            <!-- Zona unde va fi plasat video-ul pe fundal -->
+            <div class="video-background">
+            <video autoplay loop muted plays-inline>
+    <source src="{{ url_for('static', filename='/static/photos/video11.mp4') }}" type="video/mp4">
+    Browserul tău nu suportă elementul video.
+</video>
+
+        </div>
         }
+        .video-background {
+    position: fixed; /* Poziționează video-ul fix în fundal */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; /* Asigură-te că acoperă tot ecranul pe lățime */
+    min-height: 100%; /* Asigură-te că acoperă tot ecranul pe înălțime */
+    z-index: -100; /* Plasează video-ul în spatele celorlalte elemente */
+}
+
+video {
+    display: block; /* Elimină orice spațiu în jurul video-ului */
+}
+
         /* Stilurile pentru bara de navigație */
 .navbar {
     background-color: #333; /* Culoarea de fundal pentru navbar */

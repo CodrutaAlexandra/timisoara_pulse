@@ -8,20 +8,19 @@
     <link rel="stylesheet" href="styles.css">
      <style>
         body {
-            background: linear-gradient(135deg, #71b7e6, #9b59b6);
-            color: #fff;
+            background-color: #ffd700;
+            color: #000;
         }
         /* Stilurile pentru bara de navigație */
 .navbar {
-    background-color: #333; /* Culoarea de fundal pentru navbar */
-    min-height: 20px; /* Înălțimea minimă a navbar-ului */
-    max-height: 60px;
+    background-color: #000; /* Culoarea de fundal pentru navbar */
+    height: 60px;
     font-size: 0.9em;
 }
 
 /* Stilurile pentru link-urile din navbar */
 .navbar-brand, .nav-link {
-    color: #fff !important; /* Culoarea textului */
+    color: #ffd700 !important; /* Culoarea textului */
     font-size: 1.0em; /* Mărimea textului */
     text-shadow: none; /* Fără umbră text */
 }
@@ -39,7 +38,7 @@
             border-radius: 8px;
         }
         .text-section {
-            background: rgba(0, 0, 0, 0.7);
+            background-color: #ebe5cd;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -59,7 +58,7 @@
                 height: 50px; /* Setează înălțimea la 300px */
         }
         body {
-    color: #FFFFFF; /* Schimbă culoarea textului în alb */
+    color: #000; /* Schimbă culoarea textului în alb */
     font-family: 'Arial', sans-serif; /* Alege un font ușor de citit */
     line-height: 1.6; /* Spațiu suplimentar între liniile de text */
 }
@@ -68,14 +67,12 @@
 h2 {
     font-size: 2em; /* Mărește dimensiunea fontului */
     margin-bottom: .5em; /* Spațiu sub titlu */
-    text-shadow: 2px 2px 4px #000000; /* Adaugă umbra textului pentru a îmbunătăți lizibilitatea pe fundaluri colorate */
 }
 
 /* Stilizează subtitlurile secțiunilor */
 h3 {
     font-size: 1.5em;
     margin-top: 1em;
-    text-shadow: 1px 1px 3px #000000;
 }
 
 /* Stilizează listele */
@@ -105,13 +102,27 @@ a:hover {
 
 /* Îmbunătățirea vizibilității textului pe imagini sau fundaluri colorate */
 .text-justify {
-    background-color: rgba(0, 0, 0, 0.5); /* Adaugă un fundal semi-transparent */
+    background-color: #ebe5cd; /* Adaugă un fundal semi-transparent */
     padding: 15px; /* Spațiu în jurul textului */
     border-radius: 10px; /* Rotunjirea colțurilor fundalului */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adaugă o umbră ușoară pentru a "ridica" textul de pe fundal */
 }
 
         /* Add more custom styles as needed */
+        .btn-custom {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    background-color: #ffd700;
+    color: #000;
+}
+
     </style>
 
 </head>
@@ -290,6 +301,8 @@ a:hover {
                 <h3>Arte și Meșteșuguri</h3>
                 <p>Descoperă tradițiile și creativitatea localnicilor prin piesele unice de artizanat și prin galeriile de artă care îmbogățesc cultura orașului.</p>
                 <blockquote>"Artizanatul este arta de a crea frumos din suflet și din mâini." - Anonim</blockquote>
+                <p>Haide să urmaresti acest tur online al unui muzeu din orașul nostru!</p>
+                <a href="/tur3d" class="btn btn-custom">Explore 3D</a>
             </div>
         </div>
     </div>

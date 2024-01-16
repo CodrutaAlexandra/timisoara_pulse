@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <title>Welcome to Timișoara Pulse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+    background-color: #d72525; /* Culoarea de fundal pentru navbar */
+    min-height: 20px; /* Înălțimea minimă a navbar-ului */
+    max-height: 60px;
+    font-size: 0.9em;
+}
+
+/* Stilurile pentru link-urile din navbar */
+ .navbar-brand, .nav-link {
+    color: #ffd700 !important; /* Culoarea textului */
+    font-size: 1.0em; /* Mărimea textului */
+    text-shadow: none; /* Fără umbră text */
+}
+
+/* Stilurile pentru iconițele din navbar, utilizând Font Awesome */
+.navbar .fas {
+    font-size: 1.0em;  /* Mărimea iconițelor */
+}
+        .jumbotron {
+            background-color: #ebe5cd; /* Semi-transparent background */
+            border-radius: 15px;
+            max-width: 45%;
+        }
+        .btn-custom {
+            background-color: #000;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #ffd700;
+        }
+        .site-content {
+            display: flex;
+            flex-direction: column;
+            min-height: 80%;
+        }
+
+        .content-wrap {
+            flex: 1;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #ffd700; /* Yellow background color similar to Bumblebee */
+            color: #000; /* Black text color */
+            padding: 20px;
+            /*height: 850px; /* Adjust as needed */
+            min-height: 100vh;
+
+        }
+
+        .description {
+            width: 45%;
+        }
+
+        .video {
+            width: 50%;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Add more styling as needed */
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Explore Timișoara</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/events">Events <i class="fas fa-calendar-alt"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/map">Map <i class="fas fa-map-marked-alt"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/businesses">Local Businesses <i class="fas fa-store"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/explore_3d">Explore 3D <i class="fas fa-vr-cardboard"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+
+
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the Pulse of Timișoara</h1>
+            <p class="lead">Uncover events, culture, and heritage in our vibrant city.</p>
+            <hr class="my-4">
+            <p>Be part of the community that lives the urban life to the fullest, feel the rhythm of historic streets, and enjoy the colors of cultural diversity.</p>
+            <p>Connect with the history, art, and people that make Timișoara a unique place in the world.</p>
+            <!-- Butonul care deschide modalul -->
+            <a class="btn btn-custom btn-lg" href="#" role="button" data-toggle="modal" data-target="#discoverMoreModal">Discover More</a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="discoverMoreModal" tabindex="-1" role="dialog" aria-labelledby="discoverMoreModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="discoverMoreModalLabel">Explore Timișoara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aici poți adăuga conținut, cum ar fi text sau un carusel de imagini -->
+                    <p>Here you can find more detailed information about Timișoara...</p>
+                    <!-- Exemplu de carusel Bootstrap pentru imagini -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="../static/photos/best1.jpg" height="500" width="490" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="../static/photos/best2.jpg" height="500" width="490" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="../static/photos/best3.jpg" height="500" width="490" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" height="500" width="490" role="button" data-slide="prev">
+                            <span class-prev-icon aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+            </div>
+
+
+        <div class="video">
+            <video autoplay loop muted src="../static/photos/video11.mp4" type="video/mp4">
+
+            </video>
+        </div>
+
+    </main>
+
+    <!-- Add additional sections or footer as needed -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
      <style>
         body {
-            background-color: #ffd700;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
             color: #fff;
         }
         /* Stilurile pentru bara de navigație */
@@ -39,21 +39,22 @@
             width: 100%; /* pentru a se întinde pe toată lățimea containerului */
         }
         body {
-    color: #000; /* Schimbă culoarea textului în alb */
+    color: #FFFFFF; /* Schimbă culoarea textului în alb */
     font-family: 'Arial', sans-serif; /* Alege un font ușor de citit */
     line-height: 1.6; /* Spațiu suplimentar între liniile de text */
 }
 
 /* Stilurile pentru bara de navigație */
 .navbar {
-    background-color: #000; /* Culoarea de fundal pentru navbar */
-    height: 60px;
+    background-color: #333; /* Culoarea de fundal pentru navbar */
+    min-height: 20px; /* Înălțimea minimă a navbar-ului */
+    max-height: 60px;
     font-size: 0.9em;
 }
 
 /* Stilurile pentru link-urile din navbar */
 .navbar-brand, .nav-link {
-    color: #ffd700 !important; /* Culoarea textului */
+    color: #fff !important; /* Culoarea textului */
     font-size: 1.0em; /* Mărimea textului */
     text-shadow: none; /* Fără umbră text */
 }
@@ -67,12 +68,14 @@
 h2 {
     font-size: 2em; /* Mărește dimensiunea fontului */
     margin-bottom: .5em; /* Spațiu sub titlu */
+    text-shadow: 2px 2px 4px #000000; /* Adaugă umbra textului pentru a îmbunătăți lizibilitatea pe fundaluri colorate */
 }
 
 /* Stilizează subtitlurile secțiunilor */
 h3 {
     font-size: 1.5em;
     margin-top: 1em;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 /* Stilizează listele */
@@ -97,11 +100,12 @@ a:hover {
 /* Stilizează butoanele navbar-ului dacă este necesar */
 .navbar-brand, .nav-link {
     font-size: 1.1em;
+    text-shadow: none; /* Înlătură umbra textului pentru claritate */
 }
 
 /* Îmbunătățirea vizibilității textului pe imagini sau fundaluri colorate */
 .text-justify {
-    background-color: #ebe5cd; /* Adaugă un fundal semi-transparent */
+    background-color: rgba(0, 0, 0, 0.5); /* Adaugă un fundal semi-transparent */
     padding: 15px; /* Spațiu în jurul textului */
     border-radius: 10px; /* Rotunjirea colțurilor fundalului */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adaugă o umbră ușoară pentru a "ridica" textul de pe fundal */
@@ -159,7 +163,7 @@ a:hover {
 
 <!-- Buton pentru deschiderea modalului de adăugare afacere -->
 <div class="container mt-5 text-center">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBusinessModal">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addBusinessModal">
         Adaugă Afacerea Ta
     </button>
 </div>

@@ -103,6 +103,10 @@ def explore_3d():
     # Serve the 3D images for exploration
     return render_template('explore_3d.html', images=[])
 
+@app.route('/tur3d')
+def tur3d():
+    return render_template('tur3d.html')
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()  # Creați tabelele în baza de date
